@@ -1,20 +1,15 @@
-def perform_operation(num1,num2, operation):
+def perform_operation(num1, num2, operation):
     """
     Perform arithmetic operations on two numbers.
 
     Parameters:
-    num1 (int, float): The first number.
-    num2 (int, float): The second number.
+    num1 (float): The first number.
+    num2 (float): The second number.
     operation (str): The operation to perform ('add', 'subtract', 'multiply', 'divide').
 
     Returns:
-    int, float: The result of the arithmetic operation.
-    
-    Raises:
-    ValueError: If the operation is not recognized.
-    ZeroDivisionError: If division by zero is attempted.
+    float or str: The result of the arithmetic operation, or an error message.
     """
-    
     if operation == 'add':
         return num1 + num2
     elif operation == 'subtract':
@@ -23,7 +18,7 @@ def perform_operation(num1,num2, operation):
         return num1 * num2
     elif operation == 'divide':
         if num2 == 0:
-            raise ZeroDivisionError("Cannot divide by zero.")
+            return "Error: Cannot divide by zero"
         return num1 / num2
     else:
-        raise ValueError("Operation not recognized. Use 'add', 'subtract', 'multiply', or 'divide'.")
+        return "Error: Invalid operation"
